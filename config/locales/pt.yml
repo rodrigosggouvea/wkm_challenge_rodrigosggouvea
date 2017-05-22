@@ -4,11 +4,18 @@ pt:
       client:
         one: Cliente
         other: Clientes
+      product:
+        one: Produto
+        other: Produtos
     attributes:
       client:
         name: Nome
         cpf: CPF
         email: E-mail
+      product:
+        barcode: Código de barras
+        name: Nome
+        value: Valor unitário
   new: Novo
   save: Salvar
   back: Voltar
@@ -21,3 +28,10 @@ pt:
     destroy: Deletar clientes
     success: Cliente salvo com sucesso
     destroy: Cliente(s) apagado(s) com sucesso
+  products:
+    title: Produtos
+    new: Cadastrar produto
+    edit: Atualizar produto
+    destroy: Deletar produtos
+    success: Produto salvo com sucesso
+    destroy: Produto(s) apagado(s) com sucesso

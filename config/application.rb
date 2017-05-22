@@ -42,6 +42,7 @@ module WkmChallengeRodrigosggouvea
       g.fixture false
       g.fixture_specs false
       g.request_specs false
+      g.assets false
     end
   end
 end

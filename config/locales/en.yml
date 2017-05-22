@@ -3,15 +3,22 @@ en:
     attributes:
       client:
         cpf: CPF
+      product:
+        barcode: Bar code
+        value: Unit price
   delete: Delete selected
   clients:
     title: Clients
-    name: Name
-    cpf: CPF
-    email: E-mail
     orders: Orders
     new: New client
     edit: Edit client
     destroy: Delete clients
     success: Client saved successfully
     destroy: Client(s) deleted successfully
+  products:
+    title: Products
+    new: New product
+    edit: Edit product
+    destroy: Delete products
+    success: Product saved successfully
+    destroy: Product(s) deleted successfully

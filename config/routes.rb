@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :products do
+    collection do
+      delete :delete_selected
+    end
+  end
   resources :clients do
     collection do
       delete :delete_selected

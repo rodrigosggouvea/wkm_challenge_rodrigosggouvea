@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= t('products.title') %></h1>
+<%= link_to t('new'), new_product_path, class: 'waves-effect waves-light btn right' %>
+<%= form_tag delete_selected_products_path, method: :delete do %>
+  <%= submit_tag t('delete'), class: 'waves-effect waves-light red btn right' %>
+
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th><%= sort_link(@q, :barcode) %></th>
+        <th class="hide-on-med-and-down"><%= sort_link(@q, :name) %></th>
+        <th class="hide-on-med-and-down"><%= sort_link(@q, :value) %></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <td>
+            <%= check_box_tag 'products[]', product.id, nil, id: "products_#{product.id}" %>
+            <label for="<%= "products_#{product.id}" %>"></label>
+          </td>
+          <td><%= link_to product.barcode, edit_product_path(product) %></td>
+          <td class="hide-on-med-and-down"><%= product.name %></td>
+          <td class="hide-on-med-and-down"><%= product.value %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

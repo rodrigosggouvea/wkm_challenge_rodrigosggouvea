@@ -16,6 +16,7 @@ gem 'therubyracer', platforms: :ruby
 gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
 
+gem 'jquery-rails'
 gem 'materialize-sass'
 gem 'materialize-rails'
 gem 'ransack'
@@ -23,6 +24,7 @@ gem 'ransack'
 group :development, :test do
   gem 'pry'
   gem 'rspec-rails'
+  gem 'shoulda'
   gem 'rubocop', require: false
 end
 

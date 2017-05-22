@@ -41,6 +41,7 @@ module WkmChallengeRodrigosggouvea
       g.routing_specs false
       g.fixture false
       g.fixture_specs false
+      g.request_specs false
     end
   end
 end

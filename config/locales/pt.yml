@@ -1,2 +1,23 @@
 pt:
-  hello: "Olá mundo"
+  activerecord:
+    models:
+      client:
+        one: Cliente
+        other: Clientes
+    attributes:
+      client:
+        name: Nome
+        cpf: CPF
+        email: E-mail
+  new: Novo
+  save: Salvar
+  back: Voltar
+  delete: Deletar selecionados
+  clients:
+    title: Clientes
+    orders: Pedidos
+    new: Cadastrar cliente
+    edit: Atualizar cliente
+    destroy: Deletar clientes
+    success: Cliente salvo com sucesso
+    destroy: Cliente(s) apagado(s) com sucesso

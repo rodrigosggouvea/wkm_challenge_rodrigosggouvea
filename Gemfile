@@ -24,6 +24,7 @@ gem 'ransack'
 gem 'kaminari'
 gem 'cocoon'
 gem 'simple_form'
+gem 'enum_help'
 
 group :development, :test do
   gem 'pry'

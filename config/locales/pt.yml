@@ -4,6 +4,12 @@ pt:
   back: Voltar
   delete: Deletar selecionados
   select_language: "Língua:"
+  enums:
+    order:
+      status:
+        open: Em Aberto
+        paid: Pago
+        cancelled: Cancelado
   activerecord:
     models:
       client:

@@ -4,7 +4,7 @@
 <%= link_to t('new'), new_order_path, class: 'waves-effect waves-light btn right' %>
 <%= search_form_for @q do |f| %>
   <%= f.search_field :date_or_client_name_or_client_email_or_client_cpf_or_product_orders_product_name_or_product_orders_product_barcode_cont %>
-  <%= select_tag :per, options_for_select([10, 25, 50, 100], params[:per].present? ? params[:per] : 25), class: "per-select" %>
+  <%= select_tag :per, options_for_select([10, 20, 50, 100], params[:per].present? ? params[:per] : 20), class: "per-select" %>
   <%= f.submit %>
 <% end %>
 <%= form_tag delete_selected_orders_path, method: :delete do %>
@@ -18,7 +18,8 @@
         <th><%= sort_link(@q, :date) %></th>
         <th><%= sort_link(@q, :client_name) %></th>
         <th><%= sort_link(@q, :product_orders_count) %></th>
-        <th><%= sort_link(@q, :discount) %></th>
+        <th><%= t('activerecord.attributes.order.price') %></th>
+        <th><%= sort_link(@q, :status) %></th>
       </tr>
     </thead>
 
@@ -33,6 +34,7 @@
           <td><%= order.client.name %></td>
           <td><%= order.product_orders.count %></td>
           <td><%= calculate_full_price(order) %></td>
+          <td><%= order.status %></td>
         </tr>
       <% end %>
     </tbody>

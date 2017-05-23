@@ -6,8 +6,8 @@ RSpec.describe OrdersController, type: :controller do
   let(:client) { Client.create!(name: 'Joca Cunha', cpf: '21345621345', email: 'joca@email.com') }
   let(:product) { Product.create!(name: 'Leite Parmalat 1l', barcode: '21345621345', value: 4.5) }
 
-  let(:valid_attributes)   { { client_id: client.id, date: Date.today, discount: 0, product_orders_attributes: [product_id: product.id, quantity: 2] } }
-  let(:invalid_attributes) { { client_id: client.id, date: nil, discount: 0, product_orders_attributes: [product_id: product.id, quantity: 2] } }
+  let(:valid_attributes)   { { client_id: client.id, date: Date.today, discount: 0, status: 'open', product_orders_attributes: [product_id: product.id, quantity: 2] } }
+  let(:invalid_attributes) { { client_id: client.id, date: nil, discount: 0, status: 'open', product_orders_attributes: [product_id: product.id, quantity: 2] } }
 
   let(:valid_session) { {} }
 

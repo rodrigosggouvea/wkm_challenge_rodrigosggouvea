@@ -1,12 +1,13 @@
 en:
   select_language: "Language:"
+  search: Search
   activerecord:
     attributes:
       client:
         cpf: CPF
       product:
         barcode: Bar code
-        value: Unit price
+        value: Unit price (R$)
     errors:
       messages:
         record_invalid: "Validation failed: %{errors}"

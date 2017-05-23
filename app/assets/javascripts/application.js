@@ -15,3 +15,7 @@
 //= require materialize
 //= require cocoon
 //= require_tree .
+
+$(document).ready(function(){
+  $(".sidebar-collapse").sideNav();
+});

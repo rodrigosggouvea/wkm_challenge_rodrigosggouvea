@@ -6,19 +6,28 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   </head>
 
   <body>
     <header id="header" class="page-topbar">
       <div class="navbar-fixed">
-        <nav class="navbar-color">
+        <nav class="navbar-color blue">
           <div class="nav-wrapper container">
             <%= link_to 'WKM - Rodrigo Gouvea', root_path, class: 'brand-logo darken-1' %>
-            <ul class="right">
+          </div>
+        </nav>
+      </div>
+    </header>
+    <div class="wrapper">
+      <aside id="left-sidebar-nav">
+        <ul id="main-menu" class="side-nav fixed leftside-navigation ps-container ps-active-y">
+          <li>
+            <ul>
               <li>
-                <a href="javascript:void(0);" data-activates="translation-dropdown" class="dropdown-button waves-effect waves-block waves-light">
+                <a href="#!" data-activates="translation-dropdown" class="dropdown-button waves-effect waves-block waves-light">
+                  <%= mi.arrow_drop_down.css_class('right') %>
                   <%= t('select_language') %>
-                  <i class="mdi-navigation-arrow-drop-down right"></i>
                 </a>
               </li>
               <li>
@@ -28,18 +37,24 @@
                 </ul>
               </li>
             </ul>
-          </div>
-        </nav>
-      </div>
-    </header>
-    <div class="wrapper">
-      <ul class="side-nav fixed leftside-navigation" id="main-menu">
-        <li class="bold"><%= link_to t('clients.title'), clients_path %></li>
-        <li class="bold"><%= link_to t('products.title'), products_path %></li>
-        <li class="bold"><%= link_to t('orders.title'), orders_path %></li>
-      </ul>
+          </li>
+          <li class="bold"><%= link_to t('clients.title'), clients_path %></li>
+          <li class="bold"><%= link_to t('products.title'), products_path %></li>
+          <li class="bold"><%= link_to t('orders.title'), orders_path %></li>
+        </ul>
+        <a href="#" data-activates="main-menu" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only blue">
+          <%= mi.light.menu %>
+        </a>
+      </aside>
       <section id="content">
         <div class="container">
+          <% flash.each do |key, value| %>
+            <div class="card <%= flash_class(key) %>">
+              <div class="card-content white-text">
+                <p><%= value %></p>
+              </div>
+            </div>
+          <% end %>
           <div class="row">
             <div class="col s12 m12 l12">
               <%= yield %>

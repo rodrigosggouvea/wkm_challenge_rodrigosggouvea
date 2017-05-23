@@ -1,14 +1,11 @@
-<p id="notice"><%= notice %></p>
-
 <h1><%= t('products.title') %></h1>
-<%= link_to t('new'), new_product_path, class: 'waves-effect waves-light btn right' %>
-<%= search_form_for @q do |f| %>
-  <%= f.search_field :name_or_barcode_cont %>
-  <%= select_tag :per, options_for_select([10, 20, 50, 100], params[:per].present? ? params[:per] : 20), class: "per-select" %>
-  <%= f.submit %>
-<% end %>
+
+<%= button_to_new(new_product_path) %>
+
+<%= render 'search_form', search: :name_or_barcode_cont %>
+
 <%= form_tag delete_selected_products_path, method: :delete do %>
-  <%= submit_tag t('delete'), class: 'waves-effect waves-light red btn right' %>
+  <%= button_to_delete_selected %>
 
   <table>
     <thead>
@@ -29,7 +26,7 @@
           </td>
           <td><%= link_to product.barcode, edit_product_path(product) %></td>
           <td class="hide-on-med-and-down"><%= product.name %></td>
-          <td class="hide-on-med-and-down"><%= product.value %></td>
+          <td class="hide-on-med-and-down"><%= number_to_currency product.value %></td>
         </tr>
       <% end %>
     </tbody>

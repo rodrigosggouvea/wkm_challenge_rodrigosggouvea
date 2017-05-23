@@ -1,0 +1,13 @@
+<div class="row">
+  <%= search_form_for @q do |f| %>
+    <div class="col s12 m10 l10">
+      <%= f.search_field search, { placeholder: t('search') } %>
+    </div>
+    <div class="col s6 m1 l1">
+      <%= select_tag :per, options_for_select([10, 20, 50, 100], params[:per].present? ? params[:per] : 20) %>
+    </div>
+    <div class="col s6 m1 l1">
+      <%= button_tag mi.search, class: "waves-effect waves-light btn right" %>
+    </div>
+  <% end %>
+</div>

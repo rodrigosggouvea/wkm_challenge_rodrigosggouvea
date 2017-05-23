@@ -1,9 +1,10 @@
 pt:
-  new: Novo
+  new: cadastrar
   save: Salvar
+  search: Pesquisar
   back: Voltar
-  delete: Deletar selecionados
-  select_language: "Língua:"
+  delete: Excluir selecionados
+  select_language: "Idioma:"
   enums:
     order:
       status:
@@ -29,7 +30,7 @@ pt:
       product:
         barcode: Código de barras
         name: Nome
-        value: Valor unitário
+        value: Valor unitário (R$)
       product_order:
         product: Produto
         quantity: Quantidade
@@ -37,6 +38,8 @@ pt:
         client: Cliente
         date: Data
         discount: Desconto
+        itens: Items
+        price: Valor Total
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'

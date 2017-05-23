@@ -1,4 +1,5 @@
 @import "materialize";
+@import "material_icons";
 
 #main-menu {
   width: 230px;
@@ -7,4 +8,8 @@
 
 select {
   display: inherit;
+}
+
+span.badge.new:after {
+  content: "";
 }

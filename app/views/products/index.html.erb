@@ -2,6 +2,11 @@
 
 <h1><%= t('products.title') %></h1>
 <%= link_to t('new'), new_product_path, class: 'waves-effect waves-light btn right' %>
+<%= search_form_for @q do |f| %>
+  <%= f.search_field :name_or_barcode_cont %>
+  <%= select_tag :per, options_for_select([10, 25, 50, 100], params[:per].present? ? params[:per] : 25), class: "per-select" %>
+  <%= f.submit %>
+<% end %>
 <%= form_tag delete_selected_products_path, method: :delete do %>
   <%= submit_tag t('delete'), class: 'waves-effect waves-light red btn right' %>
 
@@ -29,4 +34,5 @@
       <% end %>
     </tbody>
   </table>
+  <%= paginate_entries(@products) %>
 <% end %>

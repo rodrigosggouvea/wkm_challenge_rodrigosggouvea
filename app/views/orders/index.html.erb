@@ -2,6 +2,11 @@
 
 <h1><%= t('orders.title') %></h1>
 <%= link_to t('new'), new_order_path, class: 'waves-effect waves-light btn right' %>
+<%= search_form_for @q do |f| %>
+  <%= f.search_field :date_or_client_name_or_client_email_or_client_cpf_or_product_orders_product_name_or_product_orders_product_barcode_cont %>
+  <%= select_tag :per, options_for_select([10, 25, 50, 100], params[:per].present? ? params[:per] : 25), class: "per-select" %>
+  <%= f.submit %>
+<% end %>
 <%= form_tag delete_selected_orders_path, method: :delete do %>
   <%= submit_tag t('delete'), class: 'waves-effect waves-light red btn right' %>
 
@@ -32,4 +37,5 @@
       <% end %>
     </tbody>
   </table>
+  <%= paginate_entries(@orders) %>
 <% end %>

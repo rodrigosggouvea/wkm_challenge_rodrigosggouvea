@@ -21,6 +21,7 @@ gem 'jquery-rails'
 gem 'materialize-rails'
 gem 'materialize-sass'
 gem 'ransack'
+gem 'kaminari'
 gem 'cocoon'
 gem 'simple_form'
 

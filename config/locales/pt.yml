@@ -1,4 +1,9 @@
 pt:
+  new: Novo
+  save: Salvar
+  back: Voltar
+  delete: Deletar selecionados
+  select_language: "Língua:"
   activerecord:
     models:
       client:
@@ -32,10 +37,6 @@ pt:
         restrict_dependent_destroy:
           has_one: Não é possível excluir o registro pois existe um %{record} dependente
           has_many: Não é possível excluir o registro pois existem %{record} dependentes
-  new: Novo
-  save: Salvar
-  back: Voltar
-  delete: Deletar selecionados
   clients:
     title: Clientes
     orders: Pedidos

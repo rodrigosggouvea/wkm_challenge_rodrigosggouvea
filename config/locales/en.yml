@@ -1,4 +1,5 @@
 en:
+  select_language: "Language:"
   activerecord:
     attributes:
       client:
@@ -217,6 +218,7 @@ en:
       short: "%d %b %H:%M"
     pm: pm
   delete: Delete selected
+  save: Save
   clients:
     title: Clients
     orders: Orders

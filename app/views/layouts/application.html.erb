@@ -14,6 +14,20 @@
         <nav class="navbar-color">
           <div class="nav-wrapper container">
             <%= link_to 'WKM - Rodrigo Gouvea', root_path, class: 'brand-logo darken-1' %>
+            <ul class="right">
+              <li>
+                <a href="javascript:void(0);" data-activates="translation-dropdown" class="dropdown-button waves-effect waves-block waves-light">
+                  <%= t('select_language') %>
+                  <i class="mdi-navigation-arrow-drop-down right"></i>
+                </a>
+              </li>
+              <li>
+                <ul id="translation-dropdown" class="dropdown-content">
+                  <li><%= link_to "Português", url_for(locale: :pt) %></li>
+                  <li><%= link_to "English",   url_for(locale: :en) %></li>
+                </ul>
+              </li>
+            </ul>
           </div>
         </nav>
       </div>

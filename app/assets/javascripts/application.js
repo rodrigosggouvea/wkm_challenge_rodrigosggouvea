@@ -13,4 +13,5 @@
 //= require rails-ujs
 //= require jquery2
 //= require materialize
+//= require cocoon
 //= require_tree .

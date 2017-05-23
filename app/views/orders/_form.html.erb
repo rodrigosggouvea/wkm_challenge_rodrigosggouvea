@@ -1,0 +1,39 @@
+<%= simple_form_for(order) do |form| %>
+  <% if order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% order.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <%= form.association :client, wrapper_html: { class: "col s12 m4 l4 field" } %>
+    <%= form.input :date, wrapper_html: { class: "col s12 m4 l4 field" } %>
+    <%= form.input :discount, wrapper_html: { class: "col s12 m4 l4 field" } %>
+  </div>
+
+  <div class="row">
+    <div id="product_orders" class="col s12 m12 l12">
+      <h4><%= t('products.title') %></h4>
+      <%= form.fields_for :product_orders do |product_order| %>
+      <%= render 'product_order_fields', f: product_order %>
+      <% end %>
+      <div class="row">
+        <div class="col s12 m12 l12 links">
+          <%= link_to_add_association t('products.add'), form, :product_orders, class: 'waves-effect waves-light btn' %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12 m12 l12 actions">
+      <%= form.submit(t('save'), class: 'waves-effect waves-light btn') %>
+    </div>
+  </div>
+<% end %>

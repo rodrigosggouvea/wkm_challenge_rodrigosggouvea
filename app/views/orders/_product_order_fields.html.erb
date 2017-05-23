@@ -1,0 +1,9 @@
+<div class="nested-fields">
+  <div class="row">
+    <%= f.association :product, wrapper_html: { class: "col s12 m8 l8 input-field field" } %>
+    <%= f.input :quantity, wrapper_html: { class: "col s12 m2 l2 field" } %>
+    <div class="col s12 m2 l2">
+      <%= link_to_remove_association t('products.remove'), f, class: 'waves-effect waves-light btn red' %>
+    </div>
+  </div>
+</div>

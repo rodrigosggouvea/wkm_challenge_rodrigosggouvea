@@ -21,6 +21,8 @@ gem 'jquery-rails'
 gem 'materialize-rails'
 gem 'materialize-sass'
 gem 'ransack'
+gem 'cocoon'
+gem 'simple_form'
 
 group :development, :test do
   gem 'pry'

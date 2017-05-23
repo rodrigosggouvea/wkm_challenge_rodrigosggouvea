@@ -42,6 +42,7 @@ GEM
     ast (2.3.0)
     bindex (0.5.0)
     builder (3.2.3)
+    cocoon (1.2.10)
     coderay (1.1.1)
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
@@ -176,6 +177,9 @@ GEM
     shoulda-context (1.2.2)
     shoulda-matchers (2.8.0)
       activesupport (>= 3.0.0)
+    simple_form (3.5.0)
+      actionpack (> 4, < 5.2)
+      activemodel (> 4, < 5.2)
     slop (3.6.0)
     spring (2.0.2)
       activesupport (>= 4.2)
@@ -214,6 +218,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  cocoon
   coffee-rails (~> 4.2)
   jbuilder (~> 2.5)
   jquery-rails
@@ -228,6 +233,7 @@ DEPENDENCIES
   rubocop
   sass-rails (~> 5.0)
   shoulda
+  simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3

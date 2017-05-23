@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= t('orders.title') %></h1>
+<%= link_to t('new'), new_order_path, class: 'waves-effect waves-light btn right' %>
+<%= form_tag delete_selected_orders_path, method: :delete do %>
+  <%= submit_tag t('delete'), class: 'waves-effect waves-light red btn right' %>
+
+
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th><%= sort_link(@q, :date) %></th>
+        <th><%= sort_link(@q, :client_name) %></th>
+        <th><%= sort_link(@q, :product_orders_count) %></th>
+        <th><%= sort_link(@q, :discount) %></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @orders.each do |order| %>
+        <tr>
+          <td>
+            <%= check_box_tag 'orders[]', order.id, nil, id: "orders_#{order.id}" %>
+            <label for="<%= "orders_#{order.id}" %>"></label>
+          </td>
+          <td><%= order.date %></td>
+          <td><%= order.client.name %></td>
+          <td><%= order.product_orders.count %></td>
+          <td><%= calculate_full_price(order) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

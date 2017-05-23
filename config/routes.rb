@@ -1,12 +1,17 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :products do
+  resources :clients do
     collection do
       delete :delete_selected
     end
   end
-  resources :clients do
+  resources :orders do
+    collection do
+      delete :delete_selected
+    end
+  end
+  resources :products do
     collection do
       delete :delete_selected
     end

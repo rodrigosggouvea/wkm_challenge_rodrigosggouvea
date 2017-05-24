@@ -22,7 +22,7 @@
     <div class="wrapper">
       <aside id="left-sidebar-nav">
         <ul id="main-menu" class="side-nav fixed leftside-navigation ps-container ps-active-y">
-          <li>
+          <li class="bold">
             <ul>
               <li>
                 <a href="#!" data-activates="translation-dropdown" class="dropdown-button waves-effect waves-block waves-light">
@@ -38,6 +38,7 @@
               </li>
             </ul>
           </li>
+          <li class="bold"><%= link_to t('logout'), destroy_user_session_path, method: :delete %></li>
           <li class="bold"><%= link_to t('clients.title'), clients_path %></li>
           <li class="bold"><%= link_to t('products.title'), products_path %></li>
           <li class="bold"><%= link_to t('orders.title'), orders_path %></li>

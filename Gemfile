@@ -26,6 +26,7 @@ gem 'kaminari'
 gem 'cocoon'
 gem 'simple_form'
 gem 'enum_help'
+gem 'devise'
 
 group :development, :test do
   gem 'pry'

@@ -11,6 +11,8 @@ RSpec.describe OrdersController, type: :controller do
 
   let(:valid_session) { {} }
 
+  before(:each) { sign_in(User.create!(email: 'test@email.com', password: '123456', password_confirmation: '123456')) }
+
   describe 'GET #index' do
     it 'returns a success response' do
       order = Order.create! valid_attributes

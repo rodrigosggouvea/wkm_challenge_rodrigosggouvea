@@ -1,6 +1,7 @@
 en:
   select_language: "Language:"
   search: Search
+  logout: Logout
   activerecord:
     attributes:
       client:

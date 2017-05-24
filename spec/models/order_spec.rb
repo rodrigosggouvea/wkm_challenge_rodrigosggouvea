@@ -11,6 +11,7 @@ RSpec.describe Order, type: :model do
   describe 'Validations' do
     it { should validate_presence_of(:date) }
     it { should validate_presence_of(:status) }
+    it { should validate_numericality_of(:discount) }
   end
 
   describe 'Concern methods' do

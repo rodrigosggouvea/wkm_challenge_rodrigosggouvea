@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Order < ApplicationRecord
+  include Calculable
+
   belongs_to :client
   has_many :product_orders, dependent: :destroy
 

@@ -30,8 +30,8 @@
           <td><%= status_badge(order) %></td>
           <td><%= l order.date %></td>
           <td><%= order.client.name %></td>
-          <td><%= calculate_itens(order) %></td>
-          <td><%= calculate_full_price(order) %></td>
+          <td><%= order.itens %></td>
+          <td><%= number_to_currency order.full_price %></td>
           <td>
             <%= link_to mi.mode_edit, edit_order_path(order), class: 'waves-effect waves-light btn green left' %>
           </td>

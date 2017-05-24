@@ -29,7 +29,7 @@
           </td>
           <td><%= status_badge(order) %></td>
           <td><%= l order.date %></td>
-          <td><%= order.client.name %></td>
+          <td><%= link_to order.client.name, order.client %></td>
           <td><%= order.itens %></td>
           <td><%= number_to_currency order.full_price %></td>
           <td>

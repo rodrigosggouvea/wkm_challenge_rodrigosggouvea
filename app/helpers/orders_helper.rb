@@ -8,7 +8,7 @@ module OrdersHelper
       when 'cancelled' then 'red'
       end
     content_tag(:span, class: "new badge #{color} left") do
-      order.status
+      order.status_i18n
     end
   end
 end

@@ -14,6 +14,7 @@
         <th><%= sort_link(@q, :barcode) %></th>
         <th class="hide-on-med-and-down"><%= sort_link(@q, :name) %></th>
         <th class="hide-on-med-and-down"><%= sort_link(@q, :value) %></th>
+        <th><%= t('activerecord.models.order.other') %></th>
       </tr>
     </thead>
 
@@ -27,6 +28,7 @@
           <td><%= link_to product.barcode, edit_product_path(product) %></td>
           <td class="hide-on-med-and-down"><%= product.name %></td>
           <td class="hide-on-med-and-down"><%= number_to_currency product.value %></td>
+          <td><%= link_to product.orders.count, orders_path(q: { product_orders_product_id_eq: product.id }) %></td>
         </tr>
       <% end %>
     </tbody>

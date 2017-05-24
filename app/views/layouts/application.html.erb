@@ -20,33 +20,35 @@
       </div>
     </header>
     <div class="wrapper">
-      <aside id="left-sidebar-nav">
-        <ul id="main-menu" class="side-nav fixed leftside-navigation ps-container ps-active-y">
-          <li class="bold">
-            <ul>
-              <li>
-                <a href="#!" data-activates="translation-dropdown" class="dropdown-button waves-effect waves-block waves-light">
-                  <%= mi.arrow_drop_down.css_class('right') %>
-                  <%= t('select_language') %>
-                </a>
-              </li>
-              <li>
-                <ul id="translation-dropdown" class="dropdown-content">
-                  <li><%= link_to "Português", url_for(locale: :pt) %></li>
-                  <li><%= link_to "English",   url_for(locale: :en) %></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li class="bold"><%= link_to t('logout'), destroy_user_session_path, method: :delete %></li>
-          <li class="bold"><%= link_to t('clients.title'), clients_path %></li>
-          <li class="bold"><%= link_to t('products.title'), products_path %></li>
-          <li class="bold"><%= link_to t('orders.title'), orders_path %></li>
-        </ul>
-        <a href="#" data-activates="main-menu" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only blue">
-          <%= mi.light.menu %>
-        </a>
-      </aside>
+      <% if current_user %>
+        <aside id="left-sidebar-nav">
+          <ul id="main-menu" class="side-nav fixed leftside-navigation ps-container ps-active-y">
+            <li class="bold">
+              <ul>
+                <li>
+                  <a href="#!" data-activates="translation-dropdown" class="dropdown-button waves-effect waves-block waves-light">
+                    <%= mi.arrow_drop_down.css_class('right') %>
+                    <%= t('select_language') %>
+                  </a>
+                </li>
+                <li>
+                  <ul id="translation-dropdown" class="dropdown-content">
+                    <li><%= link_to "Português", url_for(locale: :pt) %></li>
+                    <li><%= link_to "English",   url_for(locale: :en) %></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="bold"><%= link_to t('logout'), destroy_user_session_path, method: :delete %></li>
+            <li class="bold"><%= link_to t('clients.title'), clients_path %></li>
+            <li class="bold"><%= link_to t('products.title'), products_path %></li>
+            <li class="bold"><%= link_to t('orders.title'), orders_path %></li>
+          </ul>
+          <a href="#" data-activates="main-menu" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only blue">
+            <%= mi.light.menu %>
+          </a>
+        </aside>
+      <% end %>
       <section id="content">
         <div class="container">
           <% flash.each do |key, value| %>

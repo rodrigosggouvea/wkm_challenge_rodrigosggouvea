@@ -2,7 +2,7 @@
 
 <%= button_to_new(new_order_path) %>
 
-<%= render 'search_form', search: :date_or_client_name_or_client_email_or_client_cpf_or_product_orders_product_name_or_product_orders_product_barcode_cont %>
+<%= search_form(:date_or_client_name_or_client_email_or_client_cpf_or_product_orders_product_name_or_product_orders_product_barcode_cont) %>
 
 <%= form_tag delete_selected_orders_path, method: :delete do %>
   <%= button_to_delete_selected %>

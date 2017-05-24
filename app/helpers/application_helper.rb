@@ -37,4 +37,20 @@ module ApplicationHelper
       end
     end
   end
+
+  def search_form(search_fields)
+    content_tag(:div, class: "row") do
+      search_form_for @q do |f|
+        content_tag(:div, class: "col s12 m10 l10") do
+          f.search_field search_fields, { placeholder: t('search') }
+        end + \
+        content_tag(:div, class: "col s6 m1 l1") do
+          select_tag :per, options_for_select([10, 20, 50, 100], params[:per].present? ? params[:per] : 20)
+        end + \
+        content_tag(:div, class: "col s6 m1 l1") do
+          button_tag mi.search, class: "waves-effect waves-light btn right"
+        end
+      end
+    end
+  end
 end

@@ -2,7 +2,7 @@
 
 <%= button_to_new(new_client_path) %>
 
-<%= render 'search_form', search: :name_or_cpf_or_email_cont %>
+<%= search_form(:name_or_cpf_or_email_cont) %>
 
 <%= form_tag delete_selected_clients_path, method: :delete do %>
   <%= button_to_delete_selected %>
